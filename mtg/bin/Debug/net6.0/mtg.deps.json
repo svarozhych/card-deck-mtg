@@ -2820,8 +2820,7 @@
       "mtg-lib/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.5",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.4",
-          "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.0"
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.4"
         },
         "runtime": {
           "mtg-lib.dll": {}
