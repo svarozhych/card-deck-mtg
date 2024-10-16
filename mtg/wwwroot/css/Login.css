@@ -1,0 +1,57 @@
+body{
+    background-image: url("../assets/darktree.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+
+  h2{
+    color: white;
+  }
+
+  #Input_Password #Input_Email{
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  #login-submit, #registerSubmit{
+    background-color: #e73410;
+    color: white;
+  }
+
+  #registerSubmit{
+    margin-top: 1.75rem;
+  }
+
+
+  #login-submit:hover, #registerSubmit:hover{
+    background-color: #8d1700;
+    border-color: #8d1700;
+    color: white;
+  }
+
+  label{
+    color: white;
+    margin-left: 3rem;
+    font-weight: bolder;
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+  }
+
+  a:hover{
+    color: #e73410;
+  }
+
+  img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+  }

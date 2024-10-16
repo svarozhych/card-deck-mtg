@@ -1,0 +1,11 @@
+@{
+    ViewData["Title"] = "Error";
+}
+
+<link rel="stylesheet" href="~/css/Error.css" asp-append-version="true" />
+
+<h1>Error</h1>
+
+<p class="error">An error occurred while accessing the deck. Please try again or contact support.</p>
+
+<a href="@Url.Action("Index", "Decks")" class="backbtn">Return to Deck Index</a>

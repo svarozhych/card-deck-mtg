@@ -1,0 +1,86 @@
+@model mtg.Models.CardDetails
+
+@{
+    ViewData["Title"] = "Card Details";
+}
+
+<link rel="stylesheet" href="~/css/CardsDetails.css">
+
+<a asp-controller="Details" asp-route-id="@Model.prevId" class="arrow-btn prev-button"><span>&#8592;</span></a>
+
+<div>
+<h1>@Model.Name</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Set</th>
+            <th>ManaCost</th>
+            <th>Type</th>
+            <th>Text</th>
+            <th>Color</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Id</td>
+            <td>@Model.Name</td>
+            <td>@Model.Set</td>
+            
+            <td>
+                @if(@Model.ManaCost != null)
+                {
+                    @foreach (string symb in @CardDetails.ConvertManaCostToList(@Model.ManaCost))
+                    {
+                        <img src="@symb">
+                    }
+                }
+            </td>
+
+            <td>@Model.Type</td>
+            <td>@Model.Text</td>
+            <td>@Model.Color</td>
+            @if (@Model.OriginalImageUrl != null)
+            {
+                        <td><img src=@Model.OriginalImageUrl></td>
+            }
+            else
+            {
+                        <td><img src="https://via.placeholder.com/223x310.png?text=Image+unavailable"></td>
+            }
+        </tr>
+    </tbody>
+    <thead>
+        <tr>
+            <th>Rarity</th>
+            <th>Artist</th>
+            <th>Flavor</th>
+            <th>Power</th>
+            <th>Toughness</th>
+            <th>Number in Set</th>
+            <th>Symbol</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Rarity</td>
+            <td>@Model.Artist</td>
+            <td>@(Model.Flavor == null ? "N/A" : Model.Flavor.ToString())</td>
+            <td>@(Model.Power == null ? "N/A" : Model.Power.ToString())</td>
+            <td>@(Model.Toughness == null ? "N/A" : Model.Toughness.ToString())</td>
+            <td>@Model.Number</td>
+            <td><img src="@Model.Symbol" alt="@Model.Set (@Model.Rarity)" title="@Model.Set (@Model.Rarity)"></td>
+        </tr>
+    </tbody>
+</table>
+<a href='@Url.Action("Back", "Card")' class="back">Back</a>
+</div>
+
+    
+<a asp-controller="Details" asp-route-id="@Model.nextId" class="arrow-btn next-button"><span>&#8594;</span></a>
+
+
+

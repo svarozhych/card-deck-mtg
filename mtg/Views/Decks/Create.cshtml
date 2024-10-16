@@ -1,0 +1,81 @@
+@model DeckViewModel
+
+<script src="~/js/site.js"></script>
+<link rel="stylesheet" href="~/css/DeckCreation.css">
+
+<body style="width: 80%;">
+<h2 style="margin-top: 5rem;">Create Deck</h2>
+
+<form asp-controller="Decks" asp-action="Create" method="post" id="createDeck">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="Name">
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" id="description" name="Description"></textarea>
+    </div>
+    @if (ViewData.ModelState["DeckSize"] != null)
+    {
+    <div class="validation-summary-errors">
+        <ul style="color: red">
+            @foreach (var error in ViewData.ModelState["DeckSize"].Errors)
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+    }
+    <div class="form-group">
+        <label>Cards:</label>
+        <div class="card-selection">
+            @if (Model.AvailableCards != null)
+            {
+            @foreach (var card in Model.AvailableCards.Cards)
+            {       
+                <label class="card-item draggable">
+                    <input type="hidden" class="card-checkbox"name="SelectedCardId" value="@card.Id" data-card-id="@card.Id">
+                    @if (@card.OriginalImageUrl != null)
+                    {
+                        <img src=@card.OriginalImageUrl alt="@card.Name" style="border-radius: 1rem;">
+                    } else {
+                        <img src="https://via.placeholder.com/223x310.png?text=Image+unavailable" alt="@card.Name" style="border-radius: 1rem;">
+                    }
+                </label>
+            }
+            }
+        </div>
+        <div class="pagination">
+        @if (Model.AvailableCards != null)
+        {
+             
+        @if (Model.AvailableCards.PageViewModel != null && Model.AvailableCards.PageViewModel.HasPreviousPage)
+
+        {
+            <a id="backbtn" class="pagination" asp-action="Create" asp-route-page="@(Model.AvailableCards.PageViewModel.PageNumber - 1)" asp-route-search="@Model.AvailableCards.Search" asp-route-cardType ="@Model.AvailableCards.CardType" asp-route-cardColor="@Model.AvailableCards.CardColor">Previous</a>
+        }
+
+        @if (Model.AvailableCards.PageViewModel != null)
+
+        {
+            <span class="page-number">@Model.AvailableCards.PageViewModel.CurrentPage</span>
+        }
+
+         @if (Model.AvailableCards.PageViewModel != null && Model.AvailableCards.PageViewModel.HasNextPage)
+
+        {
+            <a id="nextbtn" class="pagination" asp-action="Create" asp-route-page="@(Model.AvailableCards.PageViewModel.PageNumber + 1)"  asp-route-search="@Model.AvailableCards.Search" asp-route-cardType="@Model.AvailableCards.CardType" asp-route-cardColor="@Model.AvailableCards.CardColor">Next</a>
+        }
+        }
+        </div>
+
+        <div id="deck" class="droppable">
+            <p>Drag cards here to add to deck / click on them to remove from deck</p>
+            <h3>Selected Cards:</h3>
+            <span class="count">Card Count: </span>
+            <div id="selected"></div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" id="create-button">Create</button>
+</form>
+</body>

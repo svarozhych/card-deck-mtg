@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'MTGFont';
+    src: url('../fonts/Magicmedieval-pRV1.ttf') format('truetype');
+  }
+  
+  html {
+    font-size: 14px;
+  }
+  
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+  
+  body {
+    margin-bottom: 60px;
+    background-image: url("../assets/mainmana.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  div.text-center h1{
+    font-family: 'MTGFont', sans-serif;
+    color: #e73410;
+    font-weight: bolder;
+    font-size: 4.2rem;
+    margin-bottom:5rem;
+    margin-top: 4rem;
+  }
+  
+  div.description h2{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+.description p{
+    margin-top: 8rem;
+    color: white;
+    width: 50%;
+    font-weight: lighter;
+    font-size: 1.25rem;
+  }
+
+  .right{
+    margin-left: auto;
+  }

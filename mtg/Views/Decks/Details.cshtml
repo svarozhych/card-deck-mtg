@@ -1,0 +1,37 @@
+@model DeckDetails
+<link rel="stylesheet" href="~/css/DeckDetails.css" asp-append-version="true" />
+
+<h1 style="margin-top: 5rem;">@Model.Name</h1>
+<h2><strong>Description:</strong> @Model.Description</h2>
+
+@if (@Model.Cards != null)
+{
+    <table style="width: 100%">
+        <tr>
+        <th>CardID</th>
+        <th>Card Name</th>
+        <th>Card Type</th>
+        <th>Card Image</th>
+        </tr>
+    @foreach (var card in @Model.Cards)
+    {
+        <tr>
+        <td>@card.Id</td>
+        <td>@card.Name</td> 
+        <td>@card.Type</td> 
+        @if (@card.OriginalImageUrl != null)
+            {
+                <td><img src=@card.OriginalImageUrl style="border-radius: 1rem;"></td>
+            } else {
+                <td><img src="https://via.placeholder.com/223x310.png?text=Image+unavailable" style="border-radius: 1rem;"></td>
+            }
+        </tr>
+    }
+    </table>
+}
+
+<div class="btn">
+<a class="nav-link" asp-controller="Decks" asp-action="Remove" asp-route-deckId="@Model.Id" id="deletebtn">Delete Deck</a>
+
+<a class="nav-link" asp-controller="Decks" asp-action="Index" id="backbtn">Back</a>
+</div>
