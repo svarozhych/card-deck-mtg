@@ -1,0 +1,78 @@
+body{
+    background-image: url("../assets/card.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+h1{
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    font-family: 'MTGFont', sans-serif;
+    color: #e73410;
+    font-size: 4rem;
+}
+
+h2{
+  font-weight: normal;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
+th {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: normal;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+  }
+  
+td {
+    color: black;
+    padding: 2rem;
+  }
+
+tr:nth-child(2n){
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+#backbtn {
+    border-radius: 5px;
+    padding: 10px 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    background-color: #e73410;
+    border-color: #e73410;
+    text-decoration: none;
+    width: 5rem;
+}
+
+#backbtn:hover{
+    background-color: #8d1700;
+    border-color: #8d1700;
+  }
+
+  #deletebtn{
+    border-radius: 5px;
+    padding: 10px 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    background-color: #e73410;
+    border-color: #e73410;
+    text-decoration: none;
+  }
+
+  #deletebtn:hover{
+    background-color: #8d1700;
+    border-color: #8d1700;
+  }
+
+
+.btn{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  }

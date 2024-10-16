@@ -1,0 +1,23 @@
+@model List<mtg_lib.Library.Models.Deck>
+
+<script src="~/js/DecksIndex.js"></script>
+
+<link rel="stylesheet" href="~/css/DeckIndex.css">
+
+<h1 style="margin-top: 5rem;">My Collection</h1>
+
+@if (@Model.Count != 0)
+{
+    <ul class="flex">
+        @foreach (var deck in Model)
+        {
+            <li class="deckItem"><a class="nav-link" asp-area="" asp-controller="Decks" asp-action="Details" asp-route-id="@deck.Id">@deck.Name</a></li>
+        }
+    </ul>
+}
+else
+{
+    <p>You don't have any decks yet.</p>
+}
+
+<a class="nav-link" asp-area="" asp-controller="Decks" asp-action="Create" id="create">Create New Deck</a>

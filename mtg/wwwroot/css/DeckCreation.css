@@ -1,0 +1,89 @@
+  body{
+    background-image: url("../assets/card.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  h2{
+    margin-top: 2rem;
+    font-family: 'MTGFont', sans-serif;
+    color: #e73410;
+    font-size: 4rem;
+  }
+
+  #deck {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%; 
+    background-color: #fff; 
+    overflow: auto;
+  }
+
+  #create-button {
+    position: fixed;
+    right: 0rem;
+    bottom: 2rem;
+    margin: 0.8rem;
+    color: white;
+    background-color: #e73410;
+    border-color: #e73410;
+    border-radius: 5px;
+    padding: 10px 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  span{
+    display: block;
+    margin-left: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p{
+    margin-top: 5rem;
+    margin-left: 0.8rem;
+  }
+
+  h3{
+    margin-left: 0.8rem;
+  }
+
+  #nextbtn{
+    display: block;
+    margin-left: auto;
+    border-radius: 5px;
+    padding: 10px 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    background-color: #e73410;
+    border-color: #e73410;
+    text-decoration: none;
+  }
+
+  #backbtn{
+    display: block;
+    margin-right: auto;
+    border-radius: 5px;
+    padding: 10px 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    background-color: #e73410;
+    border-color: #e73410;
+    text-decoration: none;
+  }
+
+  #nextbtn:hover, #backbtn:hover, #create-button:hover{
+    background-color: #8d1700;
+    border-color: #8d1700;
+  }
+
+  .page-number{
+    text-align: center;
+    font-weight: bold;
+  }
+

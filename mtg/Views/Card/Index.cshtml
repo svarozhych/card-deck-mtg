@@ -1,0 +1,103 @@
+@model CardIndexViewModel
+<link rel="stylesheet" href="~/css/Cards.css" asp-append-version="true" />
+
+<body>
+<h1> CARD DATABASE </h1>
+
+
+<form asp-action="Index" method="get">
+    <div class="input-group">
+        <input type="text" class="form-control" id="search-input" name="search" placeholder="Search for cards ...">
+        <div>
+  <label for="card-type">Card type :</label>
+  <select id="card-type" name="cardType">
+    <option value="">All types</option>
+    <option value="Creature">Creature</option>
+    <option value="Instant">Instant</option>
+    <option value="Sorcery">Sorcery</option>
+    <option value="Artifact">Artifact</option>
+    <option value="Enchantment">Enchantment</option>
+    <option value="Planeswalker">Planeswalker</option>
+    <option value="Land">Land</option>
+  </select>
+</div>
+
+<div>
+  <label for="card-color">Card color :</label>
+  <select id="card-color" name="cardColor">
+    <option value="">All colors</option>
+    <option value="White">White</option>
+    <option value="Blue" style="color: blue;">Blue</option>
+    <option value="Black" style="color: black;">Black</option>
+    <option value="Red" style="color: red;">Red</option>
+    <option value="Green" style="color: green;">Green</option>
+    <option value="Colorless" style="color: #CCCCCC;">Colorless</option>
+  </select>
+</div>
+        <span class="input-group-btn">
+            <button class="btn btn-primary" id="search-btn" type="submit">Search</button>
+        </span>
+    </div>
+
+</form>
+
+
+<table>
+    <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>TYPE</th>
+            <th>TEXT</th>
+            <th>IMAGE</th> 
+    </tr>
+        @if (Model.Cards != null)
+
+        {
+            @foreach (var card in Model.Cards)
+
+
+
+            {
+                                <tr>
+                        <td>@card.Id</td>
+                        <td>@card.Name</td>
+                        <td>@card.Type</td>
+
+                        <td>@card.Text</td>
+
+
+
+                            @if (@card.OriginalImageUrl != null)
+                        {
+
+                            <td><img src=@card.OriginalImageUrl style="border-radius: 1rem;"></td>
+                                    } else {
+                            <td><img src="https://via.placeholder.com/223x310.png?text=Image+unavailable" style="border-radius: 1rem;"></td>
+                        }
+
+                        <td><a id="details" asp-controller="Details" asp-route-id="@card.Id">Details</a></td>
+                    </tr>
+            }
+        }
+</table>
+
+<div class="pagination">
+        @if (Model.PageViewModel != null && Model.PageViewModel.HasPreviousPage)
+
+        {
+            <a id="backbtn" asp-action="Index" asp-route-page="@(Model.PageViewModel.PageNumber - 1)" asp-route-search="@Model.Search" asp-route-cardType ="@Model.CardType" asp-route-cardColor="@Model.CardColor">Previous</a>
+        }
+
+        @if (Model.PageViewModel != null)
+
+        {
+            <span class="page-number">@Model.PageViewModel.CurrentPage</span>
+        }
+
+         @if (Model.PageViewModel != null && Model.PageViewModel.HasNextPage)
+
+        {
+            <a id="nextbtn" asp-action="Index" asp-route-page="@(Model.PageViewModel.PageNumber + 1)"  asp-route-search="@Model.Search" asp-route-cardType="@Model.CardType" asp-route-cardColor="@Model.CardColor">Next</a>
+        }
+</div>
+</body>
