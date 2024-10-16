@@ -27,7 +27,5 @@ dotnet build
 cd ..
 cd mtg
 dotnet build
-```
-```bash
 dotnet run
 ```
