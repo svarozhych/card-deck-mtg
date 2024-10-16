@@ -1,5 +1,5 @@
-# card-deck-mtg
-A Web Application, where you can create or view card decks based on the Magic The Gathering theme.
+# Card Decks Management Platform
+A web application that allows users to easily manage and create custom card decks for Magic: The Gathering (MTG). Users can browse, filter, and view an extensive library of available MTG cards. Main features: deck building, card searching/filtering, and organization.
 
 ## Installation
 1. Clone the repo:
