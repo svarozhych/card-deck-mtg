@@ -22,6 +22,9 @@ A web application that allows users to easily manage and create custom card deck
 ## Usage
 To start the project:
 ```bash
+cd mtg-lib
+dotnet build
+cd ..
 cd mtg
 dotnet build
 ```
