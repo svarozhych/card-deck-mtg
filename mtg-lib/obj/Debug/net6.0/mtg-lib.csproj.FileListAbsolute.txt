@@ -1,0 +1,12 @@
+/Users/maria/Documents/GitHub/card-deck-mtg/mtg-lib/bin/Debug/net6.0/mtg-lib.deps.json
+/Users/maria/Documents/GitHub/card-deck-mtg/mtg-lib/bin/Debug/net6.0/mtg-lib.dll
+/Users/maria/Documents/GitHub/card-deck-mtg/mtg-lib/bin/Debug/net6.0/mtg-lib.pdb
+/Users/maria/Documents/GitHub/card-deck-mtg/mtg-lib/obj/Debug/net6.0/mtg-lib.csproj.AssemblyReference.cache
+/Users/maria/Documents/GitHub/card-deck-mtg/mtg-lib/obj/Debug/net6.0/mtg-lib.GeneratedMSBuildEditorConfig.editorconfig
+/Users/maria/Documents/GitHub/card-deck-mtg/mtg-lib/obj/Debug/net6.0/mtg-lib.AssemblyInfoInputs.cache
+/Users/maria/Documents/GitHub/card-deck-mtg/mtg-lib/obj/Debug/net6.0/mtg-lib.AssemblyInfo.cs
+/Users/maria/Documents/GitHub/card-deck-mtg/mtg-lib/obj/Debug/net6.0/mtg-lib.csproj.CoreCompileInputs.cache
+/Users/maria/Documents/GitHub/card-deck-mtg/mtg-lib/obj/Debug/net6.0/mtg-lib.dll
+/Users/maria/Documents/GitHub/card-deck-mtg/mtg-lib/obj/Debug/net6.0/refint/mtg-lib.dll
+/Users/maria/Documents/GitHub/card-deck-mtg/mtg-lib/obj/Debug/net6.0/mtg-lib.pdb
+/Users/maria/Documents/GitHub/card-deck-mtg/mtg-lib/obj/Debug/net6.0/ref/mtg-lib.dll
