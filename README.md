@@ -4,7 +4,7 @@ A web application that allows users to easily manage and create custom card deck
 ## Installation
 1. Clone the repo:
     ```bash
-    git clone git@github.com:svarozhych/card-deck-mtg.git
+    git clone https://github.com/svarozhych/card-deck-mtg.git
     ```
 2. Install dependencies:
     ```bash
