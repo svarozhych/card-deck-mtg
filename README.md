@@ -19,6 +19,8 @@ A web application that allows users to easily manage and create custom card deck
    https://dotnet.microsoft.com/en-us/download
    ```
 
+4. Create a local database. Update the credentials in mtg/appsettings.json, specify the correct port as well.
+
 ## Usage
 To start the project:
 ```bash
